@@ -47,7 +47,7 @@ while True:
                 cont=cont+1
             print("De la categoria %s hay %d peliculas"%(nombre_categoria,cont))
         cont1=0     
- 	elif opcion==3:
+    elif opcion==3:
         nombre_pelis=input("Introduce el nombre de una pelicula: ")
         nombre_cines=doc.xpath('//cartelera/cine/pelicula[@titulo="%s"]/../@nombre'%nombre_pelis)
         if nombre_pelis in nombre_pelicula(doc):
