@@ -30,7 +30,7 @@ while True:
                 pelis.remove(i)
         for i in pelis:
             print(i)
-   elif opcion==2:
+    elif opcion==2:
         for i in opciones_categoria(doc):
             categoria.append(i)
         for i in categoria:
