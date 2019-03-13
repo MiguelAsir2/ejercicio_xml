@@ -47,3 +47,16 @@ while True:
                 cont=cont+1
             print("De la categoria %s hay %d peliculas"%(nombre_categoria,cont))
         cont1=0     
+ 	elif opcion==3:
+        nombre_pelis=input("Introduce el nombre de una pelicula: ")
+        nombre_cines=doc.xpath('//cartelera/cine/pelicula[@titulo="%s"]/../@nombre'%nombre_pelis)
+        if nombre_pelis in nombre_pelicula(doc):
+            for i in nombre_cines:
+                print(i)
+                cont+=1
+            direccion=input("¿Desea saber su localizacion(S/N)? ")
+            if direccion.upper()=="S":
+                for i in nombre_cines:
+                    print("%s se encuentra en "%i,end="")
+                    for i in doc.xpath('//cartelera/cine[@nombre="%s"]/@direccion'%i):
+                        print(i)
