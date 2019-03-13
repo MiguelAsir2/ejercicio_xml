@@ -1,0 +1,18 @@
+def nombre_cine(doc):
+ return doc.xpath('//cine/@nombre')
+def direccion_cine(doc):
+    return doc.xpath('//cine/@direccion')
+def municipio_cine(doc):
+    return doc.xpath('//cine/@monicipio')
+def nombre_pelicula(doc):
+    return doc.xpath('//cine/pelicula/@titulo')
+def director_pelicula(doc):
+    return doc.xpath('//cine/pelicula/@director')
+def interpretes_pelicula(doc):
+    return doc.xpath('//cine/pelicula/@interpretes')
+def sinopsis_pelicula(doc):
+    return doc.xpath('//cine/pelicula/@sinopsis')
+def sesiones_peliculas(doc):
+    return doc.xpath('//cine/pelicula/sesiones/@sesion')
+def opciones_categoria(doc):
+    return doc.xpath('//cartelera/cine/pelicula/@categoria')
