@@ -77,3 +77,20 @@ while True:
             print(i)
         else:
             print("Esta película no está disponible")
+    elif opcion==5:
+        pelicula=input("Introduce el nombre de una película: ")
+        nombre_cines=doc.xpath('//cartelera/cine/pelicula[@titulo="%s"]/../@nombre'%pelicula)
+        print("La película %s se encuentra en:"%pelicula)
+        for i in nombre_cines:
+            print(i)
+        print()
+        print("Horarios:")
+        print()
+        dias=doc.xpath('//cartelera/cine/pelicula[@titulo="%s"]/sesiones/sesion/@dia'%pelicula)
+        horas=doc.xpath('//cartelera/cine/pelicula[@titulo="%s"]/sesiones/sesion/@hora'%pelicula)
+        for i,j in zip(dias,horas):
+            print(i,"-->",end="")
+            print(j)
+    if opcion==0:
+        break 
+print()
