@@ -60,3 +60,20 @@ while True:
                     print("%s se encuentra en "%i,end="")
                     for i in doc.xpath('//cartelera/cine[@nombre="%s"]/@direccion'%i):
                         print(i)
+    elif opcion==4:
+        for i in nombre_pelicula(doc):
+            pelis.append(i)
+            if pelis.count(i)>1:
+                pelis.remove(i)
+        for i in pelis:
+            print(i)
+        pelicula=input("Introduce el nombre de una pelicula: ")
+        sinopsis=doc.xpath('//cartelera/cine/pelicula[@titulo="%s"]/sinopsis/text()'%pelicula)
+        if pelicula in nombre_pelicula(doc):
+            for i in sinopsis:
+                sinop.append(i)
+            while sinop.count(i)>1:
+                sinop.remove(i)
+            print(i)
+        else:
+            print("Esta película no está disponible")
