@@ -30,4 +30,20 @@ while True:
                 pelis.remove(i)
         for i in pelis:
             print(i)
-   
+   elif opcion==2:
+        for i in opciones_categoria(doc):
+            categoria.append(i)
+        for i in categoria:
+            while categoria.count(i)>1:
+                categoria.remove(i)
+        for i in categoria:
+            cont1+=1
+            print("%d. %s"%(cont1,i))         
+        nombre_categoria=input("Introduce una categoria de pelicula: ")
+        if nombre_categoria not in categoria:
+            print("Esa categoría no existe en estas películas")
+        if nombre_categoria in categoria:
+            for i in categoria:
+                cont=cont+1
+            print("De la categoria %s hay %d peliculas"%(nombre_categoria,cont))
+        cont1=0     
